@@ -75,9 +75,10 @@ const CreateProposal = () => {
 
     return(
         <>
-        <div className="createPage">
+        <section>
+        <div className="createPage container">
            <div className="optionInfo">
-            <h1>Create a Proposal</h1>
+            <h1>Önerge Oluştur</h1>
            </div>
            <div>
            <div className="proposalInput">
@@ -105,7 +106,7 @@ const CreateProposal = () => {
                 ></input>
             </div>
             <div className="optionInfo">
-                Önerge için seçenekler (!! en az 2 en fazla 5 seçenek girin !!)
+                Önerge için seçenekler (En az 2 en fazla 5 seçenek girin!)
             </div>
             <div className="proposalInput">
                 <h1 className="inputInfo">
@@ -152,22 +153,9 @@ const CreateProposal = () => {
                     Oluştur
                 </button>
             </div>
-            <div className="btnContainer">
-                <button className="createBtn" onClick={handleGet}>
-                    göster
-                </button>
-            </div>
-
-            <ResultCard title={"deneme"} 
-            description={"burada bir oylamanın acıklaması olucak oylama ne ile alakalı vs vs onlar yazıcak saknfa fanskfn sanfn"}
-            options={["elma","armut","muz"]}
-            voteCounts={[3,6,9]}
-            >
-
-            </ResultCard>
-
            </div>
         </div>
+        </section>
         </>
     );
 

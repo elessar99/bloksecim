@@ -1,10 +1,10 @@
 const testData = [
     {
-        pin: 'JhrRCS4e-6',
+        pin: 'JhrRCS4e-5',
         owner: 'xyz'
     },
     {
-        pin: 'OZyS420E-5',
+        pin: 'OZyS420E-3',
         owner: 'xyz'
     },
     {

@@ -60,27 +60,16 @@ const Voting = () => {
         
             const matchedProposals = cleanProposals(proposal, owners);
             console.log(matchedProposals); 
-        
             setproposals(matchedProposals);
-            alert("Önerge getirme başarılı.");
         } catch (error) {
             console.error("Önerge bilgileri alınamadı:", error);
-            alert("Önerge getirilemedi.");
         }
     }
 
     return(
         <>
-        <div>
-            boşluk
-        </div>
-        <div>
-            boşluk
-        </div>
-        <div>
-            boşluk
-        </div>
-        <div>
+        <section>
+        <div className="container">
             {proposals && proposals.length > 0 ? (
                 proposals.map((item) => {
                     return(
@@ -96,10 +85,11 @@ const Voting = () => {
                 })
             ) : (
                 <div>
-                    <p>Şu anda mevcut oylama yok.</p>
+                    <p className="voting-header">Şu anda mevcut oylama yok.</p>
                 </div>
             )}
         </div>
+        </section>
         </>
     );
 }

@@ -9,8 +9,8 @@ const ResultCard = ({ title, description, options, voteCounts }) => {
         <>
         <div className="resultCard">
             <div className="cardInfo">
-                <h2>{title}</h2>
-                <p>{description}</p>
+                <h2>Başlık: {title}</h2>
+                <p>Açıklama: {description}</p>
             </div>
             <div className="allVoteResult">
                 {options.map((option, index) => {

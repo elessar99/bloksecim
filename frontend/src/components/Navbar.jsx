@@ -51,12 +51,12 @@ export default function Navbar() {
                 </span>
             </div>
             <ul className={`nav-links ${isMobileMenuOpen ? 'show-menu' : ''}`}>
-                <li onClick={handleMobileMenuClick}>
+                {/* <li onClick={handleMobileMenuClick}>
                     <NavLink to={'/tokenomics'}>Token Al</NavLink>
-                </li>
+                </li> */}
 
                 <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/create'}>Önergel Oluştur</NavLink>
+                    <NavLink to={'/create'}>Önerge Oluştur</NavLink>
                 </li>
 
                 <li onClick={handleMobileMenuClick}>

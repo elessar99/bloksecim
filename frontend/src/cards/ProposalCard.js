@@ -85,23 +85,25 @@ const ProposalCard = ({ title, description, options, proposalIndex }) => {
 
     return (
         <div className="proposalCardBody">
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2>Başlık: {title}</h2>
+            <p>Açıklama: {description}</p>
             <ul className="options">
                 {options.map((option, index) => (
+
                     <li
                         key={index} 
                         className={index === selectedOptionIndex ? "selected" : ""}
                         onClick={() => handleOptionClick(index)}
                     >
+                        Seçenek:
                         {option}
                     </li>
                 ))}
             </ul>
             <p>Seçilen seçenek index: {selectedOptionIndex !== null ? selectedOptionIndex : "Henüz seçilmedi"}</p>
             <div>
-                <input placeholder="Pin giriniz"></input>
-                <button onClick={handleVotingClick} >Oyla</button>
+                <input placeholder="Pin giriniz" className="inp-voting-pin"></input>
+                <button onClick={handleVotingClick} className="btn-voting" >Oyla</button>
             </div>
         </div>
     );

@@ -46,25 +46,15 @@ const Results = () => {
             const proposal = await contract.methods.getAllProposalsResults().call();
             console.log(proposal);
             setproposals(proposal);
-            alert("Önerge getirme başarılı.");
         } catch (error) {
             console.error("Önerge bilgileri alınamadı:", error);
-            alert("Önerge getirilemedi.");
         }
     }
 
     return(
         <>
-        <div>
-            boşluk
-        </div>
-        <div>
-            boşluk
-        </div>
-        <div>
-            boşluk
-        </div>
-        <div>
+        <section>
+        <div className='results container'>
             {proposals && proposals.length > 0 ? (
                 proposals.map((item) => {
                     return(
@@ -84,6 +74,7 @@ const Results = () => {
                 </div>
             )}
         </div>
+        </section>
         </>
     );
 }
