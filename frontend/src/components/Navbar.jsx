@@ -56,11 +56,15 @@ export default function Navbar() {
                 </li>
 
                 <li onClick={handleMobileMenuClick}>
+                    <NavLink to={'/create'}>Önergel Oluştur</NavLink>
+                </li>
+
+                <li onClick={handleMobileMenuClick}>
                     <NavLink to={'/proposals'}>Önergeler</NavLink>
                 </li>
 
                 <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/getpin'}>Pin Al</NavLink>
+                    <NavLink to={'/results'}>Sonuçlar</NavLink>
                 </li>
                 <li onClick={handleMobileMenuClick}>
                     <NavLink to={'/profile'}>Profilim</NavLink>

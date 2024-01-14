@@ -28,7 +28,7 @@ const router = createBrowserRouter(
       <Route path='/create' element={<CreateProposal/>}/>
       <Route path='/voting' element={<Voting/>}/>
       <Route path='/results' element={<Results/>}/>
-      <Route path='/proposals' element={<Proposals />}/>
+      <Route path='/proposals' element={<Voting />}/>
       <Route path='/proposals/martians' element={<MartianProposals/>}/>
       <Route path='/proposals/xyz' element={<XyzProposals/>}/>
       <Route path='/tokenomics' element={<Tokenomics />} />
