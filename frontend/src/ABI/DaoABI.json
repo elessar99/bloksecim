@@ -7,6 +7,16 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "_votingOwner",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
 				"internalType": "string[]",
 				"name": "_optionsDescriptions",
 				"type": "string[]"
@@ -18,26 +28,142 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "getActiveProposals",
+		"outputs": [
 			{
-				"internalType": "enum BlokSecimDAO.Vote",
-				"name": "vote",
-				"type": "uint8"
-			},
+				"components": [
+					{
+						"internalType": "string",
+						"name": "votingOwner",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "optionsCount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "op1Count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "op2Count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "op3Count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "op4Count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "op5Count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "optionsDescriptions",
+						"type": "string[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct BlokSecimDAO.Proposal[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAllProposalsResults",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "votingOwner",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "voteCounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "optionsDescriptions",
+						"type": "string[]"
+					}
+				],
+				"internalType": "struct BlokSecimDAO.ProposalResult[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
 			{
 				"internalType": "uint256",
 				"name": "proposalIndex",
 				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "addressHasVoted",
-				"type": "uint256"
 			}
 		],
-		"name": "voting",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "getOptionsDescriptions",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -50,6 +176,16 @@
 		],
 		"name": "proposals",
 		"outputs": [
+			{
+				"internalType": "string",
+				"name": "votingOwner",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "proposalIndex",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "optionsCount",
@@ -89,9 +225,37 @@
 				"internalType": "string",
 				"name": "description",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum BlokSecimDAO.Vote",
+				"name": "vote",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "proposalIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "voting",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
