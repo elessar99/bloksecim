@@ -30,7 +30,7 @@ const Voting = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0xee0B323446Ed8802C657C12ADc0C9d9317737d4b';
+                    const contractAddress = '0xA4d196CDbeeB740C52ECeFfA14D91B936Ec7218b';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);
