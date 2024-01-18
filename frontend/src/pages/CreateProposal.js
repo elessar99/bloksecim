@@ -34,7 +34,7 @@ const CreateProposal = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0xA4d196CDbeeB740C52ECeFfA14D91B936Ec7218b';
+                    const contractAddress = '0x2Fad597E5503DC9B9f50f0703aB6955eb5104b32';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);

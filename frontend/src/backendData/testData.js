@@ -1,27 +1,27 @@
 const testData = [
     {
         pin: 'J2rTkV34-0',
-        owner: 'epix'
+        owner: 'riet'
     },
     {
         pin: 'JhrRCS4e-1',
-        owner: 'epix'
+        owner: 'riet'
     },
     {
         pin: '5ZkS42cf-2',
-        owner: 'xyz'
+        owner: 'riet'
     },
     {
         pin: 'OZyS420E-3',
-        owner: 'epix'
+        owner: 'riet'
     },
     {
         pin: 'a7P5oxL7-4',
-        owner: 'xyz'
+        owner: 'riet'
     },
     {
         pin: 'buwbkBy1-5',
-        owner: 'epix'
+        owner: 'riet'
     }
 ];
 
