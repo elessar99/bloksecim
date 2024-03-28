@@ -19,6 +19,7 @@ import XyzProposals from './pages/XyzProposals';
 import CreateProposal from './pages/CreateProposal';
 import Voting from './pages/Voting';
 import Results from './pages/Results';
+import Involvement from './pages/Involvement';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path='/create' element={<CreateProposal/>}/>
       <Route path='/voting' element={<Voting/>}/>
       <Route path='/results' element={<Results/>}/>
+      <Route path='/involvement' element={<Involvement/>}/>
       <Route path='/proposals' element={<Voting />}/>
       <Route path='/proposals/martians' element={<MartianProposals/>}/>
       <Route path='/proposals/xyz' element={<XyzProposals/>}/>

@@ -1,0 +1,26 @@
+.involvementBody{
+    max-width: 1232px;
+    margin: auto;
+}
+.cardList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+@media (max-width: 1244px) {
+    .involvementBody {
+        max-width: 924px;
+    }
+}
+
+@media (max-width: 936px) {
+    .involvementBody {
+        max-width: 616px;
+    }
+}
+@media (max-width: 628px) {
+    .involvementBody {
+        max-width: 308px;
+    }
+}

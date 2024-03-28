@@ -1,0 +1,44 @@
+.ConnectionCard{
+    margin: 10px 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 300px;
+    min-width: 300px;
+    border: 3px  solid rgba(0, 0, 0, 1);
+    box-shadow: 5px 5px 15px rgba(0,  0, 0, 0.3);
+    padding: 5px;
+}
+.ConnectionCard:hover {
+    transform: scale(1.07);
+    box-shadow: 5px 5px 15px rgba(0,  0, 0, 0.6);
+}
+.ConnectionInfo{
+    font-family: 'Raleway', sans-serif, serif;
+    color: #2c3e50;
+}
+.connectionH{
+    font-weight: 900;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 5px rgba(100, 100, 100, 0.4);
+}
+.ConnectionBtn{
+    display: flex;
+    justify-content: end;
+}
+
+
+.buttonJ {
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    color: var(--white);
+}
+.buttonJ:hover{
+    cursor: pointer;
+    opacity: 0.75;
+}
+.buttonJ:active{
+    transform: scale(0.93)
+}
