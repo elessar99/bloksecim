@@ -1,0 +1,33 @@
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    background-color: rgba(200, 200, 200, 0.15);
+}
+.navlink{
+    text-shadow: 0px 00px 50px rgb(0, 0, 0);
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+}
+.registerBtn{
+    margin: 12px 0 0 0;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    flex-direction: column;
+}
+.registerBtn.ripple-effect{
+    color: red;
+}
+.registerComponents{
+    margin: 0 0 1em 0;
+}
+.navlink:hover{
+    display: inline-block;
+    background: linear-gradient(to right, #0044ff, #000a99, #3700ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

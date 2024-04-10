@@ -56,23 +56,30 @@ export default function Navbar() {
                 </li> */}
 
                 <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/create'}>Önerge Oluştur</NavLink>
+                    <NavLink to={'/bloksecim/create'}>Önerge Oluştur</NavLink>
                 </li>
 
                 <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/proposals'}>Önergeler</NavLink>
+                    <NavLink to={'/bloksecim/proposals'}>Önergeler</NavLink>
                 </li>
 
                 <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/results'}>Sonuçlar</NavLink>
+                    <NavLink to={'/bloksecim/involvement'}>Katılım</NavLink>
+                </li>
+
+                <li onClick={handleMobileMenuClick}>
+                    <NavLink to={'/bloksecim/results'}>Sonuçlar</NavLink>
                 </li>
                 <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/profile'}>Profilim</NavLink>
+                    <NavLink to={'/bloksecim/profile'}>Profilim</NavLink>
                 </li>
                 <button className='connect-wallet' onClick={handleModalClick}>
-                    <NavLink to={`${walletContext.defaultAccount !== null ? '/profile' : '#'}`}>
+                    <NavLink to={`${walletContext.defaultAccount !== null ? '/bloksecim/profile' : '#'}`}>
                         {walletContext.defaultAccount !== null ? walletContext.conBtnText : 'Cüzdan Bağla'}
                     </NavLink>
+                </button>
+                <button className='connect-wallet'>
+                    kullanıcı adı
                 </button>
             </ul>
             {isModalOpen && (<ConnectModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />)}

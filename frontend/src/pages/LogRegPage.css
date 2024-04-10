@@ -1,0 +1,13 @@
+.logRegPage{
+    background-color: rgb(150, 150, 150);
+    background-image: url("../img/LogRegBg.jpg");
+    min-height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
