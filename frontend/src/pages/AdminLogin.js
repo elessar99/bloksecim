@@ -2,10 +2,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import Button from '../components/Buttons/Button';
 import Input from '../components/Input/Input';
-import userData from '../backendData/userData';
+import adminData from '../backendData/adminData';
 import { useState } from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import  {setUser} from "../store/actions/loginAction";
+import  {setAdmin} from "../store/actions/adminLoginAction";
 
 
 const AdminLogin = () =>{
@@ -17,11 +17,11 @@ const AdminLogin = () =>{
     const handleLogin = () => {
         console.log("aşama")
         // Kullanıcı adı ve şifreyi kontrol et
-        const user = userData.find(user => user.userName === username && user.passWord === password);
-        if (user) {
-            dispatch(setUser(user))
+        const admin = adminData.find(user => user.userName === username && user.passWord === password);
+        if (admin) {
+            dispatch(setAdmin(admin))
             // Kullanıcı bulundu, yönlendirme yap
-            navigate("/bloksecim");
+            navigate("/admin/create");
             console.log(username + ", " + password);
         } else {
             // Kullanıcı bulunamadı, hata mesajı veya gerekirse başka bir işlem yapılabilir.

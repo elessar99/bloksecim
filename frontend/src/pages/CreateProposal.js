@@ -4,6 +4,7 @@ import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import ProposalCard from "../cards/ProposalCard"
 
+import { useSelector } from "react-redux";
 import "./CreateProposal.css"
 import { Result } from "ethers";
 import Results from "./Results";
@@ -12,6 +13,7 @@ import ResultCard from "../cards/ResultCard";
 
 const CreateProposal = () => {
     const [title, setTitle] = useState("")
+    const [category, setcategory] = useState("");
     const [description, setDescription] = useState("")
     const [votingOwner , setVotingOwner] = useState("")
     const [option1, setOption1] = useState("")
@@ -22,6 +24,7 @@ const CreateProposal = () => {
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
     const [account, setAccount] = useState(null);
+    const adminState = useSelector(state=>state.admin)
 
 
     useEffect(() => {
@@ -70,9 +73,6 @@ const CreateProposal = () => {
     }
 
 
-
-
-
     return(
         <>
         <section>
@@ -85,9 +85,24 @@ const CreateProposal = () => {
                 <h1 className="inputInfo">
                 Oylama Sahibi
                 </h1>
-                <input className="createInput" placeholder="Oylama sahibi" value={votingOwner}
+                <div className="createInput" placeholder="Oylama sahibi" value={votingOwner}
                 onChange={(e) => setVotingOwner(e.target.value)}
-                ></input>
+                >
+                    {adminState.ownerName}
+                </div>
+            </div>
+            <div className="proposalInput">
+                <h1 className="inputInfo">
+                Önerge Kategorisi
+                </h1>
+                <input className="createInput" placeholder="Önerge Kategorisi" value={category}
+                onChange={(e) => setcategory(e.target.value)} list="category-list">
+                </input>
+                <datalist id="category-list">
+                    {adminState.ownerCategories.map((category, index) => (
+                        <option key={index} value={category} />
+                    ))}
+                </datalist>
             </div>
             <div className="proposalInput">
                 <h1 className="inputInfo">

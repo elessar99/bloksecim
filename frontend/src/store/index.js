@@ -5,16 +5,18 @@ import {persistReducer,persistStore} from "redux-persist";
 import storage from 'redux-persist/lib/storage'
 import loginReducer from "./reducers/loginReducer";
 import loginTokenReducer from "./reducers/loginTokenReducer";
+import adminLoginReducer from "./reducers/adminLoginReducer";
 
 const reducer=combineReducers({
     user:loginReducer,
     token:loginTokenReducer,
+    admin:adminLoginReducer,
 })
 const persistConfig={
     key:"root",
     storage,
     version:1,
-    whitelist:["user","token"],
+    whitelist:["user","token","admin"],
     blacklist:["",""]
 }
 
