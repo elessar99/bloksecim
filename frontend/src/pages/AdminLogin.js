@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import  {setUser} from "../store/actions/loginAction";
 
 
-const Login = () =>{
+const AdminLogin = () =>{
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -54,5 +54,5 @@ const Login = () =>{
   );
 }
 
-export default Login;
+export default AdminLogin;
 

@@ -1,6 +1,6 @@
 const VCData = [
     {
-        pin: 'fertnite',
+        pin: 'fertnite', 
         owner: 'epix game',
         category: 'fertnite'
     },

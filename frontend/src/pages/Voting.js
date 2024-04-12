@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Voting.css"
-import testData from "../backendData/testData";
+import testData from "../backendData/categoriesData";
 import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import ProposalCard from "../cards/ProposalCard"

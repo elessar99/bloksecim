@@ -10,6 +10,8 @@ import Results from "../pages/Results";
 import Involvement from "../pages/Involvement";
 import Profile from "../pages/Profile";
 import About from "../pages/About";
+import Register from "../pages/Register";
+import AdminPage from "../pages/AdminPage";
 
 
 const Router = () => {
@@ -25,9 +27,18 @@ const Router = () => {
                 },
                 {
                   path: "register",
-                  element: <div/>,
+                  element: <Register/>,
                 },
               ],
+        },{
+          path: '/admin',
+          element: <AdminPage/>,
+          children: [
+            {
+              path: "create",
+              element: <CreateProposal/>
+            }
+          ]
         },
         {
           path: '/bloksecim',

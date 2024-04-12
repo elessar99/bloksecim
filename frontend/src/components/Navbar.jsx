@@ -5,10 +5,12 @@ import { useContext, useEffect, useState } from 'react';
 import WalletContext from '../context/WalletContext';
 import ConnectModal from '../modals/ConnectModal';
 import Logo from './Logo';
+import { useSelector } from "react-redux";
 import './Navbar.css';
 export default function Navbar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const userState=useSelector(state=>state.user)
 
     const walletContext = useContext(WalletContext);
 
@@ -79,7 +81,7 @@ export default function Navbar() {
                     </NavLink>
                 </button>
                 <button className='connect-wallet'>
-                    kullanıcı adı
+                    {userState.userName}
                 </button>
             </ul>
             {isModalOpen && (<ConnectModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />)}

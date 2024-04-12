@@ -3,14 +3,18 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {persistReducer,persistStore} from "redux-persist";
 import storage from 'redux-persist/lib/storage'
+import loginReducer from "./reducers/loginReducer";
+import loginTokenReducer from "./reducers/loginTokenReducer";
 
 const reducer=combineReducers({
+    user:loginReducer,
+    token:loginTokenReducer,
 })
 const persistConfig={
     key:"root",
     storage,
     version:1,
-    whitelist:[""],
+    whitelist:["user","token"],
     blacklist:["",""]
 }
 
