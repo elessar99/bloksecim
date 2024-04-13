@@ -5,20 +5,42 @@ import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { dellPin } from "../store/actions/dellPinAction";
 
-const ProposalCard = ({ title, description, options, proposalIndex }) => {
+const ProposalCard = ({ title, description, options, proposalIndex, proposalpin }) => {
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
     const [account, setAccount] = useState(null);
+    const userState = useSelector(state=>state.user)
+    const dispatch=useDispatch()
 
 
 
     const handleOptionClick = (index) => {
         setSelectedOptionIndex(index);
     };
+    
+    const pinControl = (pin) => {
+        let control = false;
+        userState.pinList.forEach((element, i) => {
+            const pinParts = element
+            if (pinParts == pin) {
+                console.log(`Index ${pin} matches with pin of element at index ${i}`);
+                dispatch(dellPin(userState,i))                
+                control = true;              
+            }
+        });
+        if (control) {
+            alert("başarılı")
+            voting()
+        } else {
+            alert("pin bulunamadı")
+        }
+    };
 
-    const pinControl = (index) => {
+    const pinControllll = (index) => {
         let control = false;
         testData.forEach((element, i) => {
             const pinParts = element.pin.split('-');
@@ -45,7 +67,7 @@ const ProposalCard = ({ title, description, options, proposalIndex }) => {
     
 
     const handleVotingClick = () =>{
-        pinControl(proposalIndex)
+        pinControl(proposalpin)
     }
 
 
@@ -70,7 +92,7 @@ const ProposalCard = ({ title, description, options, proposalIndex }) => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0x2Fad597E5503DC9B9f50f0703aB6955eb5104b32';
+                    const contractAddress = '0x64855d75C3a601057582C28F8c304d3eE8369F1d';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);

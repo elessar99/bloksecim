@@ -3,11 +3,6 @@
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "_pin",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
 				"name": "_description",
 				"type": "string"
 			},
@@ -38,11 +33,6 @@
 		"outputs": [
 			{
 				"components": [
-					{
-						"internalType": "string",
-						"name": "pin",
-						"type": "string"
-					},
 					{
 						"internalType": "string",
 						"name": "votingOwner",
@@ -76,6 +66,11 @@
 					{
 						"internalType": "uint256",
 						"name": "op4Count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "op5Count",
 						"type": "uint256"
 					},
 					{
@@ -183,11 +178,6 @@
 		"outputs": [
 			{
 				"internalType": "string",
-				"name": "pin",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
 				"name": "votingOwner",
 				"type": "string"
 			},
@@ -219,6 +209,11 @@
 			{
 				"internalType": "uint256",
 				"name": "op4Count",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "op5Count",
 				"type": "uint256"
 			},
 			{

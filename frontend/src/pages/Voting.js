@@ -4,6 +4,7 @@ import testData from "../backendData/categoriesData";
 import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import ProposalCard from "../cards/ProposalCard"
+import { useSelector } from "react-redux";
 
 
 const Voting = () => {
@@ -12,6 +13,7 @@ const Voting = () => {
     const [account, setAccount] = useState(null);
     const [ownerControl, setOwnerControl] = useState(null);
     const [proposals, setproposals] = useState([]);
+    const userState = useSelector(state=>state.user)
 
 
     const ownerList = () => {
@@ -30,7 +32,7 @@ const Voting = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0x2Fad597E5503DC9B9f50f0703aB6955eb5104b32';
+                    const contractAddress = '0x64855d75C3a601057582C28F8c304d3eE8369F1d';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);
@@ -55,10 +57,9 @@ const Voting = () => {
             const owners = ownerList()
         
             const cleanProposals = (proposals, owners) => {
-                return proposals.filter(proposal => owners.includes(proposal.votingOwner));
+                return proposals.filter(proposal => owners.includes(proposal.pin));
             };
-        
-            const matchedProposals = cleanProposals(proposal, owners);
+            const matchedProposals = cleanProposals(proposal, userState.pinList);
             console.log(matchedProposals); 
             setproposals(matchedProposals);
         } catch (error) {
@@ -79,6 +80,7 @@ const Voting = () => {
                         description={item.description}
                         options={item.optionsDescriptions}
                         proposalIndex={item.proposalIndex}
+                        proposalpin={item.pin}
                         />
                     </div>
                     )

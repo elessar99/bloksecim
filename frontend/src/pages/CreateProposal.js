@@ -25,6 +25,7 @@ const CreateProposal = () => {
     const [contract, setContract] = useState(null);
     const [account, setAccount] = useState(null);
     const adminState = useSelector(state=>state.admin)
+    const [proposalPin, setproposalPin] = useState("");
 
 
     useEffect(() => {
@@ -37,7 +38,7 @@ const CreateProposal = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0x2Fad597E5503DC9B9f50f0703aB6955eb5104b32';
+                    const contractAddress = '0x64855d75C3a601057582C28F8c304d3eE8369F1d';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);
@@ -51,9 +52,11 @@ const CreateProposal = () => {
     }, []);
 
     const handleCreate = async () => {
-        const options = [option1, option2, option3, option4, option5].filter(Boolean);
+        const pPin = createPin()
+        setproposalPin(pPin)
+        const options = [option1, option2, option3, option4].filter(Boolean);
         try {
-            await contract.methods.createProposal(description, votingOwner, title, options).send({ from: account });
+            await contract.methods.createProposal(pPin, description, votingOwner, title, options).send({ from: account });
             alert("Önerge başarıyla oluşturuldu!");
         } catch (error) {
             console.error("Önerge oluşturma hatası:", error);
@@ -71,6 +74,19 @@ const CreateProposal = () => {
             alert("Önerge getirilemedi.");
         }
     }
+    const randomNumber = () => {
+        const number = Math.floor(1000000000 + Math.random() * 9000000000);
+        return number;
+      }
+    const createPin = () => {
+        if (category.length>0) {
+            const num = randomNumber();
+            const pin = (category+"-"+num)
+            return pin
+        } else {
+            alert("Kategori seçiniz.")
+        }
+    }
 
 
     return(
@@ -80,6 +96,7 @@ const CreateProposal = () => {
            <div className="optionInfo">
             <h1>Önerge Oluştur</h1>
            </div>
+                {(proposalPin!="")&&(<div>{proposalPin}</div>)}
            <div>
            <div className="proposalInput">
                 <h1 className="inputInfo">
@@ -153,14 +170,6 @@ const CreateProposal = () => {
                 </h1>
                 <input className="createInput" placeholder="4.Seçenek" value={option4}
                 onChange={(e) => setOption4(e.target.value)}
-                ></input>
-            </div>
-            <div className="proposalInput">
-                <h1 className="inputInfo">
-                5.Seçenek
-                </h1>
-                <input className="createInput" placeholder="5.Seçenek" value={option5}
-                onChange={(e) => setOption5(e.target.value)}
                 ></input>
             </div>
             <div className="btnContainer">

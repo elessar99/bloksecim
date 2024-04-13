@@ -4,6 +4,7 @@ import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import ProposalCard from "../cards/ProposalCard"
 import ResultCard from "../cards/ResultCard";
+import { useSelector } from "react-redux";
 
 
 const Results = () => {
@@ -12,6 +13,7 @@ const Results = () => {
     const [account, setAccount] = useState(null);
     const [ownerControl, setOwnerControl] = useState(null);
     const [proposals, setproposals] = useState([]);
+    const userState = useSelector(state=>state.user)
 
     useEffect(() => {
         async function initWeb3() {
@@ -23,7 +25,7 @@ const Results = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0x2Fad597E5503DC9B9f50f0703aB6955eb5104b32';
+                    const contractAddress = '0x64855d75C3a601057582C28F8c304d3eE8369F1d';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);

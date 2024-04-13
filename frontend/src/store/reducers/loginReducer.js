@@ -1,6 +1,7 @@
 
 const SET_USER="SET_USER";
 const ADD_CATEGORY = "ADD_CATEGORY";
+const DELL_PIN = "DELL_PIN"
 
 
 
@@ -27,6 +28,11 @@ function loginReducer(state=loginState,action){
             return {
               ...action.user,
               categories: [...action.user.categories, action.payload.category]
+            };
+        case DELL_PIN:
+            return{
+                ...action.user,
+                pinList: state.pinList.filter((_, i) => i !== action.payload.index),
             };
             
         default:
