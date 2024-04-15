@@ -8,7 +8,6 @@ const DELL_PIN = "DELL_PIN"
 const loginState={
     userName:"",
     eMail:"",
-    password:"",
     categories:null,
     pinList:null
 }
@@ -20,7 +19,6 @@ function loginReducer(state=loginState,action){
             return {
                 userName:action.payload.userName,
                 eMail:action.payload.eMail,
-                passWord:action.payload.passWord,
                 categories:action.payload.categories,
                 pinList:action.payload.pinList
             }

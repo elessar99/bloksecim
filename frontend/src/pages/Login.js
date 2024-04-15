@@ -6,6 +6,7 @@ import userData from '../backendData/userData';
 import { useState } from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import  {setUser} from "../store/actions/loginAction";
+import axios from 'axios';
 
 
 const Login = () =>{
@@ -13,6 +14,8 @@ const Login = () =>{
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const dispatch=useDispatch()
+
+    
 
     const handleLogin = () => {
         console.log("aşama")
@@ -30,6 +33,30 @@ const Login = () =>{
         }
     };
 
+    const dbLogin = () => {
+        async function loginAxios(){
+            try {
+                await axios.post("http://127.0.0.1:3000/login",{
+                    "username":username,
+                    "password":password
+                }).then((res)=>{
+                    console.log(res.data.user)
+                    const userAxios ={
+                            userName: res.data.user.username,
+                            eMail: res.data.user.email,
+                            categories: res.data.user.categories,
+                            pinList: res.data.user.pinList
+                        }
+                    dispatch(setUser(userAxios))
+                    navigate("/bloksecim");
+                })                
+            } catch (error) {
+                console.error("Login error:", error.response ? error.response.data : error.message);
+            }
+        }
+        loginAxios()
+    }
+
     return (
     <>
         <div className='loginForm'>
@@ -40,7 +67,7 @@ const Login = () =>{
                 <Input name={"Password"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="loginComponents">
-                <div className='logNavLink' onClick={handleLogin}>
+                <div className='logNavLink' onClick={dbLogin}>
                     <Button className='logNavLink' bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Login"} />
                 </div>
             </div>

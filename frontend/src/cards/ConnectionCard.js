@@ -1,9 +1,9 @@
-
+import Cookies from "universal-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import "./ConnectionCard.css"
 import { useEffect, useState } from "react";
 import { addPinToCategory } from "../store/actions/addCategoryAction";
-
+import axios from "axios";
 
 
 const ConnectionCard = ({ ownerName, votingCategory, pin }) => {
@@ -31,6 +31,20 @@ const ConnectionCard = ({ ownerName, votingCategory, pin }) => {
         control()
         window.location.reload();
     }
+    const addCategoryToDb = () => {
+        async function addCategoryAxios(){
+            try {
+                await axios.post("http://127.0.0.1:3000/add-category",{
+                    "category":pin,
+                }).then((res)=>{
+                    addCategory()
+                })                
+            } catch (error) {
+                console.error("Add category error:", error.response ? error.response.data : error.message);
+            }
+        }
+        addCategoryAxios()
+    }
 
     useEffect(() => {
         control();
@@ -55,7 +69,7 @@ const ConnectionCard = ({ ownerName, votingCategory, pin }) => {
             <div className="ConnectionBtn">
                 {pinControl?(
                     <div className="joined" >Joined</div>
-                ):(<button className="buttonJ" onClick={addCategory}>Join</button>)}
+                ):(<button className="buttonJ" onClick={addCategoryToDb}>Join</button>)}
                 
             </div>
         </div>
