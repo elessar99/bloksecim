@@ -5,7 +5,7 @@ import "./Register.css"
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import  {setUser} from "../store/actions/loginAction";
-
+import axios from 'axios';
 
 const Register = () =>{
     const [username, setUsername] = useState('');
@@ -33,6 +33,31 @@ const Register = () =>{
             console.log(username + ", " + password);
         }
     };
+    const dbRegister = () => {
+        async function registerAxios(){
+            try {
+                await axios.post("http://127.0.0.1:3000/register",{
+                    "username":username,
+                    "password":password,
+                    "email": eMail
+                }, {
+                    withCredentials: true 
+                  }).then((res)=>{
+                    console.log(res.data.user)
+                    const userAxios ={
+                            userName: res.data.user.username,
+                            eMail: res.data.user.email,
+                            categories: res.data.user.categories,
+                            pinList: res.data.user.pinList
+                        }
+                    navigate("/login");
+                })                
+            } catch (error) {
+                console.error("Login error:", error.response ? error.response.data : error.message);
+            }
+        }
+        registerAxios()
+    }
 
     return (
     <>
@@ -47,7 +72,7 @@ const Register = () =>{
                 <Input name={"Password"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="registerComponents">
-                <div className={"logNavLink"} onClick={handleRegister}>
+                <div className={"logNavLink"} onClick={dbRegister}>
                     <Button bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Register"}/>
                 </div>
             </div>

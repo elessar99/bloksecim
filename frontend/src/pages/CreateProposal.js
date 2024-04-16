@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import ProposalCard from "../cards/ProposalCard"
-
+import axios from "axios";
 import { useSelector } from "react-redux";
 import "./CreateProposal.css"
 import { Result } from "ethers";
@@ -51,12 +51,30 @@ const CreateProposal = () => {
         initWeb3();
     }, []);
 
+    const addpinToDb = (dbPin) => {
+        async function addpinAxios(){
+            try {
+                await axios.post("http://127.0.0.1:3000/add-pin",{
+                    "pin":dbPin,
+                },{
+                    withCredentials: true 
+                  }).then((res)=>{
+                    console.log(res)
+                })                
+            } catch (error) {
+                console.error("Add category error:", error.response ? error.response.data : error.message);
+            }
+        }
+        addpinAxios()
+    }
+
     const handleCreate = async () => {
         const pPin = createPin()
         setproposalPin(pPin)
         const options = [option1, option2, option3, option4].filter(Boolean);
         try {
             await contract.methods.createProposal(pPin, description, votingOwner, title, options).send({ from: account });
+            addpinToDb(pPin)
             alert("Önerge başarıyla oluşturuldu!");
         } catch (error) {
             console.error("Önerge oluşturma hatası:", error);

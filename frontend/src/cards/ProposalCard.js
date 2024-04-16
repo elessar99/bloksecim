@@ -3,7 +3,7 @@ import "./ProposalCard.css"
 import testData from "../backendData/categoriesData";
 import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
-
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { dellPin } from "../store/actions/dellPinAction";
@@ -21,6 +21,22 @@ const ProposalCard = ({ title, description, options, proposalIndex, proposalpin 
     const handleOptionClick = (index) => {
         setSelectedOptionIndex(index);
     };
+
+    const delpinToDb = (dbPin) => {
+        async function delpinAxios(){
+            try {
+                await axios.delete("http://127.0.0.1:3000/delete-pin",{
+                    data: { pin: dbPin },
+                    withCredentials: true 
+                  }).then((res)=>{
+                    console.log(res)
+                })                
+            } catch (error) {
+                console.error("Add category error:", error.response ? error.response.data : error.message);
+            }
+        }
+        delpinAxios()
+    }
     
     const pinControl = (pin) => {
         let control = false;
@@ -35,6 +51,8 @@ const ProposalCard = ({ title, description, options, proposalIndex, proposalpin 
         if (control) {
             alert("başarılı")
             voting()
+            delpinToDb(pin)
+            
         } else {
             alert("pin bulunamadı")
         }

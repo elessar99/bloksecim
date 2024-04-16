@@ -39,7 +39,9 @@ const Login = () =>{
                 await axios.post("http://127.0.0.1:3000/login",{
                     "username":username,
                     "password":password
-                }).then((res)=>{
+                }, {
+                    withCredentials: true // Bu seçeneği ekleyin
+                  }).then((res)=>{
                     console.log(res.data.user)
                     const userAxios ={
                             userName: res.data.user.username,

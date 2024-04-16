@@ -36,7 +36,9 @@ const ConnectionCard = ({ ownerName, votingCategory, pin }) => {
             try {
                 await axios.post("http://127.0.0.1:3000/add-category",{
                     "category":pin,
-                }).then((res)=>{
+                },{
+                    withCredentials: true // Bu seçeneği ekleyin
+                  }).then((res)=>{
                     addCategory()
                 })                
             } catch (error) {
