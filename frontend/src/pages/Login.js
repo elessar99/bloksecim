@@ -2,7 +2,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import Button from '../components/Buttons/Button';
 import Input from '../components/Input/Input';
-import userData from '../backendData/userData';
 import { useState } from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import  {setUser} from "../store/actions/loginAction";
@@ -17,21 +16,7 @@ const Login = () =>{
 
     
 
-    const handleLogin = () => {
-        console.log("aşama")
-        // Kullanıcı adı ve şifreyi kontrol et
-        const user = userData.find(user => user.userName === username && user.passWord === password);
-        if (user) {
-            dispatch(setUser(user))
-            // Kullanıcı bulundu, yönlendirme yap
-            navigate("/bloksecim");
-            console.log(username + ", " + password);
-        } else {
-            // Kullanıcı bulunamadı, hata mesajı veya gerekirse başka bir işlem yapılabilir.
-            alert("Kullanıcı adı veya şifre yanlış.");
-            console.log(username + ", " + password);
-        }
-    };
+    
 
     const dbLogin = () => {
         async function loginAxios(){
@@ -63,18 +48,18 @@ const Login = () =>{
     <>
         <div className='loginForm'>
             <div className="loginComponents">
-                <Input name={"User Name"} value={username} onChange={(e) => setUsername(e.target.value)} /> 
+                <Input name={"Kullanıcı Adı"} value={username} onChange={(e) => setUsername(e.target.value)} /> 
             </div>
             <div className="loginComponents">
-                <Input name={"Password"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <Input name={"Parola"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="loginComponents">
                 <div className='logNavLink' onClick={dbLogin}>
-                    <Button className='logNavLink' bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Login"} />
+                    <Button className='logNavLink' bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Giriş Yap"} />
                 </div>
             </div>
             <div>
-                <NavLink className={"navlink"} to={"register"}>Haven't you registered yet?</NavLink>
+                <NavLink className={"navlink"} to={"register"}>Kayıt olmadınız mı?</NavLink>
             </div>
 
         </div>

@@ -25,7 +25,7 @@ const Results = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0x64855d75C3a601057582C28F8c304d3eE8369F1d';
+                    const contractAddress = '0x6248E0a3411753B5c662EB4b7ebD32bF282AE9a4';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);
@@ -45,8 +45,12 @@ const Results = () => {
     const getProposal = async (contract) => {
         try {
             const proposal = await contract.methods.getAllProposalsResults().call();
-            console.log(proposal);
-            setproposals(proposal);
+            const cleanProposals = (proposals, owners) => {
+                return proposals.filter(proposal => owners.includes(proposal.pin.split('-')[0]));
+            };
+            const matchedProposals = cleanProposals(proposal, userState.categories);
+            console.log(userState);
+            setproposals(matchedProposals);
         } catch (error) {
             console.error("Önerge bilgileri alınamadı:", error);
         }

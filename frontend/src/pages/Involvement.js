@@ -60,7 +60,7 @@ const Involvement = () => {
             <div className="involvementBody">
                 {!control && (<div>
                     loading...
-                </div>)}
+                </div>)}{control &&(<div className="involvementInfo">Önerge Kategori Listesi</div>)}
                 {control && (<div className="cardList">
                     {showVCDates.length>0 && (showVCDates.map((item)=>{
                         return(

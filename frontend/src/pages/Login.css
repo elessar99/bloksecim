@@ -29,3 +29,8 @@
 .loginComponents{
     margin: 0 0 1em 0;
 }
+.adminInfo{
+    display: flex;
+    justify-content: center;
+    font-size: 40px
+}

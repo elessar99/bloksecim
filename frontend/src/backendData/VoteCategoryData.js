@@ -1,158 +1,162 @@
 const VCData = [
     {
-        pin: 'fertnite', 
+        pin: 'fortnite512', 
+        owner: 'epic games',
+        category: 'fortnite'
+    },
+    {
+        pin: 'epicstore324',
         owner: 'epix game',
-        category: 'fertnite'
+        category: 'epic store'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'overwatch739',
+        owner: 'blizzard',
+        category: 'overwatch'
     },
     {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
+        pin: 'wow734',
+        owner: 'blizzard',
+        category: 'world of warcraft'
     },
     {
-        pin: 'epixstore',
+        pin: 'starcaft731',
+        owner: 'blizzard',
+        category: 'starcaft'
+    },
+    {
+        pin: 'diablo497',
+        owner: 'blizzard',
+        category: 'diablo'
+    },
+    {
+        pin: 'netflix972',
+        owner: 'netflix',
+        category: 'netflix'
+    },
+    {
+        pin: 'amazon493',
+        owner: 'amazon',
+        category: 'amazon'
+    },
+    {
+        pin: 'primevideo612',
+        owner: 'amazon',
+        category: 'prime video'
+    },
+    {
+        pin: 'primegaming662',
+        owner: 'amazon',
+        category: 'prime gaming'
+    },
+    {
+        pin: 'steam513',
+        owner: 'valve',
+        category: 'steam'
+    },
+    {
+        pin: 'csgo412',
+        owner: 'valve',
+        category: 'cs go'
+    },
+    {
+        pin: 'eaplay251',
+        owner: 'ea games',
+        category: 'ea play'
+    },
+    {
+        pin: 'battlefield421',
+        owner: 'ea games',
+        category: 'battlefield'
+    },
+    {
+        pin: 'farcry703',
+        owner: 'ubisoft',
+        category: 'farcry'
+    },
+    {
+        pin: 'watchdogs315',
+        owner: 'ubisoft',
+        category: 'watch dogs'
+    },{
+        pin: 'fortnite512', 
+        owner: 'epic games',
+        category: 'fortnite'
+    },
+    {
+        pin: 'epicstore324',
         owner: 'epix game',
-        category: 'epixstore'
+        category: 'epic store'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'overwatch739',
+        owner: 'blizzard',
+        category: 'overwatch'
     },
     {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
+        pin: 'wow734',
+        owner: 'blizzard',
+        category: 'world of warcraft'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'starcoft731',
+        owner: 'blizzard',
+        category: 'starcoft'
     },
     {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
+        pin: 'diablo497',
+        owner: 'blizzard',
+        category: 'diablo'
     },
     {
-        pin: 'epixstore',
-        owner: 'epix game',
-        category: 'epixstore'
+        pin: 'netflix972',
+        owner: 'netflix',
+        category: 'netflix'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'amazon493',
+        owner: 'amazon',
+        category: 'amazon'
     },
     {
-        pin: 'fertnite',
-        owner: 'epix game',
-        category: 'fertnite'
+        pin: 'primevideo612',
+        owner: 'amazon',
+        category: 'prime video'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'primegaming662',
+        owner: 'amazon',
+        category: 'prime gaming'
     },
     {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
+        pin: 'steam513',
+        owner: 'valve',
+        category: 'steam'
     },
     {
-        pin: 'epixstore',
-        owner: 'epix game',
-        category: 'epixstore'
+        pin: 'csgo412',
+        owner: 'valve',
+        category: 'cs go'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'eaplay251',
+        owner: 'ea games',
+        category: 'ea play'
     },
     {
-        pin: 'fertnite',
-        owner: 'epix game',
-        category: 'fertnite'
+        pin: 'battlefield421',
+        owner: 'ea games',
+        category: 'battlefield'
     },
     {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
+        pin: 'farcry703',
+        owner: 'ubisoft',
+        category: 'farcry'
     },
     {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
-    },
-    {
-        pin: 'epixstore',
-        owner: 'epix game',
-        category: 'epixstore'
-    },
-    {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
-    },
-    {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
-    },
-    {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
-    },
-    {
-        pin: 'epixstore',
-        owner: 'epix game',
-        category: 'epixstore'
-    },
-    {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
-    },
-    {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
-    },
-    {
-        pin: 'fertnite',
-        owner: 'epix game',
-        category: 'fertnite'
-    },
-    {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
-    },
-    {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
-    },
-    {
-        pin: 'epixstore',
-        owner: 'epix game',
-        category: 'epixstore'
-    },
-    {
-        pin: 'wercroft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'world of wercroft'
-    },
-    {
-        pin: 'stercoft',
-        owner: 'blazzerd teknoloji, tasarım ve oyun geliştirme AŞ',
-        category: 'stercoft'
+        pin: 'watchdogs315',
+        owner: 'ubisoft',
+        category: 'watch dogs'
     },
 ];
 

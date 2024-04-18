@@ -32,7 +32,7 @@ const Voting = () => {
                     const accounts = await web3Instance.eth.getAccounts();
                     setAccount(accounts[0]);
 
-                    const contractAddress = '0x64855d75C3a601057582C28F8c304d3eE8369F1d';
+                    const contractAddress = '0x6248E0a3411753B5c662EB4b7ebD32bF282AE9a4';
                     const contractAbi = erc20abi;
 
                     const daoContract = new web3Instance.eth.Contract(contractAbi, contractAddress);
@@ -54,7 +54,6 @@ const Voting = () => {
         try {
             const proposal = await contract.methods.getActiveProposals().call();
             console.log(proposal);
-            const owners = ownerList()
         
             const cleanProposals = (proposals, owners) => {
                 return proposals.filter(proposal => owners.includes(proposal.pin));

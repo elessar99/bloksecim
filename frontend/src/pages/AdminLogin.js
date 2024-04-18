@@ -33,19 +33,17 @@ const AdminLogin = () =>{
     return (
     <>
         <div className='loginForm'>
+            <div className='adminInfo'>Admin Girişi</div>
             <div className="loginComponents">
-                <Input name={"User Name"} value={username} onChange={(e) => setUsername(e.target.value)} /> 
+                <Input name={"Admin Adı"} value={username} onChange={(e) => setUsername(e.target.value)} /> 
             </div>
             <div className="loginComponents">
-                <Input name={"Password"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <Input name={"Admin Parolası"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="loginComponents">
                 <div className='logNavLink' onClick={handleLogin}>
                     <Button className='logNavLink' bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Login"} />
                 </div>
-            </div>
-            <div>
-                <NavLink className={"navlink"} to={"register"}>Haven't you registered yet?</NavLink>
             </div>
 
         </div>

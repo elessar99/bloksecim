@@ -63,21 +63,21 @@ const Register = () =>{
     <>
         <div className='registerForm'>
             <div className="registerComponents">
-                <Input name={"User Name"} value={username} onChange={(e) => setUsername(e.target.value)} /> 
+                <Input name={"Kullanıcı Adı"} value={username} onChange={(e) => setUsername(e.target.value)} /> 
             </div>
             <div className="registerComponents">
                 <Input name={"Email"} type={"email"} value={eMail} onChange={(e) => setEMail(e.target.value)}/>
             </div>
             <div className="registerComponents">
-                <Input name={"Password"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <Input name={"Parola"} type={"password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="registerComponents">
                 <div className={"logNavLink"} onClick={dbRegister}>
-                    <Button bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Register"}/>
+                    <Button bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Kayıt Ol"}/>
                 </div>
             </div>
             <div>
-                <NavLink className={"navlink"} to={"login"}>Haven't you registered yet?</NavLink>
+                <NavLink className={"navlink"} to={"login"}>Bir hesabınız var mı?</NavLink>
             </div>
 
         </div>

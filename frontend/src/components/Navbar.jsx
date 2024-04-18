@@ -57,10 +57,7 @@ export default function Navbar() {
                     <NavLink to={'/tokenomics'}>Token Al</NavLink>
                 </li> */}
 
-                <li onClick={handleMobileMenuClick}>
-                    <NavLink to={'/bloksecim/create'}>Önerge Oluştur</NavLink>
-                </li>
-
+                
                 <li onClick={handleMobileMenuClick}>
                     <NavLink to={'/bloksecim/proposals'}>Önergeler</NavLink>
                 </li>

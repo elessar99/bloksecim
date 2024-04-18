@@ -120,6 +120,11 @@
 				"components": [
 					{
 						"internalType": "string",
+						"name": "pin",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
 						"name": "votingOwner",
 						"type": "string"
 					},
