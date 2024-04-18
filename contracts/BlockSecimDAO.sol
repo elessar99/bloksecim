@@ -3,6 +3,7 @@ pragma solidity ^0.8.4;
 
 contract BlokSecimDAO {
     struct Proposal {
+        string pin;
         string votingOwner;
         uint proposalIndex;
         uint optionsCount;
@@ -10,7 +11,6 @@ contract BlokSecimDAO {
         uint op2Count;
         uint op3Count;
         uint op4Count;
-        uint op5Count;
         uint deadline;
         string description;
         string title;
@@ -20,7 +20,7 @@ contract BlokSecimDAO {
 
     Proposal[] public proposals;
 
-    enum Vote {op1, op2, op3, op4, op5}
+    enum Vote {op1, op2, op3, op4}
     
     uint proposalCount; 
 
@@ -32,11 +32,12 @@ contract BlokSecimDAO {
         _;
     }
 
-    function createProposal(string memory _description, string memory _votingOwner, string memory _title, string[] memory _optionsDescriptions) external {
+    function createProposal(string memory _pin, string memory _description, string memory _votingOwner, string memory _title, string[] memory _optionsDescriptions) external {
         require(_optionsDescriptions.length>1,"yetersiz secenek");
         require(_optionsDescriptions.length<=5,"fazla secenek");
         
         proposals.push(Proposal({
+            pin : _pin,
             votingOwner: _votingOwner, 
             proposalIndex: proposals.length,
             optionsCount: _optionsDescriptions.length,
@@ -44,7 +45,6 @@ contract BlokSecimDAO {
             op2Count: 0,
             op3Count: 0,
             op4Count: 0,
-            op5Count: 0,
             title: _title,
             deadline: block.timestamp + 10 minutes,
             description: _description,
@@ -69,9 +69,6 @@ contract BlokSecimDAO {
         }
         if (vote == Vote.op4 && proposal.optionsCount >= 4) {
             proposal.op4Count +=1;
-        }
-        if (vote == Vote.op5 && proposal.optionsCount >= 5) {
-            proposal.op5Count +=1;
         }
     }
 
@@ -108,6 +105,7 @@ contract BlokSecimDAO {
 
 
         struct ProposalResult {
+            string pin;
             string votingOwner;
             string title;
             string description;
@@ -126,9 +124,9 @@ contract BlokSecimDAO {
                 if (proposal.optionsCount > 1) voteCounts[1] = proposal.op2Count;
                 if (proposal.optionsCount > 2) voteCounts[2] = proposal.op3Count;
                 if (proposal.optionsCount > 3) voteCounts[3] = proposal.op4Count;
-                if (proposal.optionsCount > 4) voteCounts[4] = proposal.op5Count;
 
                 results[i] = ProposalResult({
+                    pin: proposal.pin,
                     votingOwner: proposal.votingOwner,
                     title: proposal.title,
                     voteCounts: voteCounts,
