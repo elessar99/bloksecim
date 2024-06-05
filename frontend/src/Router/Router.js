@@ -12,6 +12,9 @@ import Profile from "../pages/Profile";
 import About from "../pages/About";
 import Register from "../pages/Register";
 import AdminPage from "../pages/AdminPage";
+import AdminLogin from "../pages/AdminLogin";
+import AdminRegister from "../pages/AdminRegister";
+import CreateCategory from "../pages/CreateCategory";
 
 
 const Router = () => {
@@ -35,8 +38,20 @@ const Router = () => {
           element: <AdminPage/>,
           children: [
             {
+              path: "login",
+              element: <AdminLogin/>
+            },
+            {
+              path: "register",
+              element: <AdminRegister/>
+            },
+            {
               path: "create",
               element: <CreateProposal/>
+            },
+            {
+              path: "category", 
+              element: <CreateCategory/>
             }
           ]
         },

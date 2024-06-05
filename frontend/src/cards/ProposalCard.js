@@ -1,6 +1,5 @@
 
 import "./ProposalCard.css"
-import testData from "../backendData/categoriesData";
 import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import axios from "axios";
@@ -58,30 +57,30 @@ const ProposalCard = ({ title, description, options, proposalIndex, proposalpin 
         }
     };
 
-    const pinControllll = (index) => {
-        let control = false;
-        testData.forEach((element, i) => {
-            const pinParts = element.pin.split('-');
-            console.log("pin kontrol : " + pinParts[1])
-            console.log("index kontrol : " + index)
-            const pinNumber = parseInt(pinParts[1]);
-            console.log("if control : " + pinNumber == index )
-            if (pinNumber == index) {
-                console.log(`Index ${index} matches with pin of element at index ${i}`);
-                testData.splice(i, 1);
-                control = true;              
-                console.log(`Element at index ${i} removed. Updated testData:`, testData);
-            }
-        });
-        if (control) {
-            alert("başarılı")
-            voting()
-            console.log(testData)
-        } else {
-            alert("pin bulunamadı")
-            console.log(testData)
-        }
-    };
+    // const pinControllll = (index) => {
+    //     let control = false;
+    //     testData.forEach((element, i) => {
+    //         const pinParts = element.pin.split('-');
+    //         console.log("pin kontrol : " + pinParts[1])
+    //         console.log("index kontrol : " + index)
+    //         const pinNumber = parseInt(pinParts[1]);
+    //         console.log("if control : " + pinNumber == index )
+    //         if (pinNumber == index) {
+    //             console.log(`Index ${index} matches with pin of element at index ${i}`);
+    //             testData.splice(i, 1);
+    //             control = true;              
+    //             console.log(`Element at index ${i} removed. Updated testData:`, testData);
+    //         }
+    //     });
+    //     if (control) {
+    //         alert("başarılı")
+    //         voting()
+    //         console.log(testData)
+    //     } else {
+    //         alert("pin bulunamadı")
+    //         console.log(testData)
+    //     }
+    // };
     
 
     const handleVotingClick = () =>{

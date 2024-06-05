@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./Voting.css"
-import testData from "../backendData/categoriesData";
 import Web3 from 'web3';
 import erc20abi from '../ABI/DaoABI.json';
 import ProposalCard from "../cards/ProposalCard"
@@ -16,10 +15,10 @@ const Voting = () => {
     const userState = useSelector(state=>state.user)
 
 
-    const ownerList = () => {
-        const owners = testData.map(item => item.owner);
-        return [...new Set(owners)]; 
-    };
+    // const ownerList = () => {
+    //     const owners = testData.map(item => item.owner);
+    //     return [...new Set(owners)]; 
+    // };
 
     
     useEffect(() => {
@@ -59,7 +58,7 @@ const Voting = () => {
                 return proposals.filter(proposal => owners.includes(proposal.pin));
             };
             const matchedProposals = cleanProposals(proposal, userState.pinList);
-            console.log(matchedProposals); 
+            console.log(userState.pinList); 
             setproposals(matchedProposals);
         } catch (error) {
             console.error("Önerge bilgileri alınamadı:", error);

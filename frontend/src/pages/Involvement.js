@@ -1,17 +1,28 @@
 import { useEffect, useState } from "react";
 import "./Involvement.css"
-import VoteCategoryData from "../backendData/VoteCategoryData";
 import ConnectionCard from "../cards/ConnectionCard";
+import axios from "axios";
 
 
 
 const Involvement = () => {
     const [scrollControl, setScrollControl] = useState(true);
     const [control, setControl] = useState(false);
-    const [allVCDate, setVCDate] = useState(VoteCategoryData);
+    const [allVCDate, setVCDate] = useState([]);
     const [showVCDates, setShowVCDates] = useState([]);
     const [buttonClick, setButtonClick] = useState(false);
     const [adet, setAdet] = useState(13);
+
+    const getList = async () => {
+      // Kullanıcı adı ve şifreyi kontrol et
+      const response = await axios.get("http://localhost:3004/VCData");
+      console.log(response.data)
+      setVCDate(response.data)
+    };
+    useEffect(() => {
+      getList();
+    }, []);
+
 
     const listRefresh = (listLength) =>{
         let counter =0

@@ -2,10 +2,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import Button from '../components/Buttons/Button';
 import Input from '../components/Input/Input';
-import adminData from '../backendData/adminData';
 import { useState } from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import  {setAdmin} from "../store/actions/adminLoginAction";
+import axios from 'axios';
 
 
 const AdminLogin = () =>{
@@ -14,10 +14,12 @@ const AdminLogin = () =>{
     const navigate = useNavigate();
     const dispatch=useDispatch()
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         console.log("aşama")
         // Kullanıcı adı ve şifreyi kontrol et
-        const admin = adminData.find(user => user.userName === username && user.passWord === password);
+        const response = await axios.get("http://localhost:3004/adminData");
+        console.log(response.data)
+        const admin = response.data.find(user => user.userName === username && user.passWord === password);
         if (admin) {
             dispatch(setAdmin(admin))
             // Kullanıcı bulundu, yönlendirme yap
@@ -45,7 +47,9 @@ const AdminLogin = () =>{
                     <Button className='logNavLink' bgColor={"linear-Gradient(to right, #0044ff, #000a99, #3700ff)"}  name={"Login"} />
                 </div>
             </div>
-
+            <div>
+                <NavLink className={"navlink"} to={"/admin/register"}>Bir hesabınız yok mu?</NavLink>
+            </div>
         </div>
     </>
     

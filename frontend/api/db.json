@@ -1,0 +1,134 @@
+{
+  "adminData": [
+    {
+      "userName": "admin",
+      "eMail": "blizzard@gmail.com",
+      "passWord": "admin123",
+      "isAdmin": true,
+      "ownerName": "blizzard",
+      "ownerCategories": [
+        "overwatch739",
+        "wow734",
+        "starcaft731",
+        "diablo497"
+      ],
+      "id": "8706"
+    },
+    {
+      "id": "f148",
+      "userName": "testa",
+      "passWord": "test123",
+      "eMail": "test@admin.com",
+      "ownerName": "testfirma",
+      "ownerCategories": [
+        "testcategori421",
+        "test321"
+      ],
+      "isAdmin": true
+    }
+  ],
+  "VCData": [
+    {
+      "pin": "fortnite512",
+      "owner": "epic games",
+      "category": "fortnite",
+      "id": "d02d"
+    },
+    {
+      "pin": "epicstore324",
+      "owner": "epix game",
+      "category": "epic store",
+      "id": "5f7a"
+    },
+    {
+      "pin": "overwatch739",
+      "owner": "blizzard",
+      "category": "overwatch",
+      "id": "7593"
+    },
+    {
+      "pin": "wow734",
+      "owner": "blizzard",
+      "category": "world of warcraft",
+      "id": "3053"
+    },
+    {
+      "pin": "starcaft731",
+      "owner": "blizzard",
+      "category": "starcaft",
+      "id": "cf8d"
+    },
+    {
+      "pin": "diablo497",
+      "owner": "blizzard",
+      "category": "diablo",
+      "id": "e14e"
+    },
+    {
+      "pin": "netflix972",
+      "owner": "netflix",
+      "category": "netflix",
+      "id": "6707"
+    },
+    {
+      "pin": "amazon493",
+      "owner": "amazon",
+      "category": "amazon",
+      "id": "7be9"
+    },
+    {
+      "pin": "primevideo612",
+      "owner": "amazon",
+      "category": "prime video",
+      "id": "e198"
+    },
+    {
+      "pin": "primegaming662",
+      "owner": "amazon",
+      "category": "prime gaming",
+      "id": "c610"
+    },
+    {
+      "pin": "steam513",
+      "owner": "valve",
+      "category": "steam",
+      "id": "2de6"
+    },
+    {
+      "pin": "csgo412",
+      "owner": "valve",
+      "category": "cs go",
+      "id": "2509"
+    },
+    {
+      "pin": "eaplay251",
+      "owner": "ea games",
+      "category": "ea play",
+      "id": "282e"
+    },
+    {
+      "pin": "battlefield421",
+      "owner": "ea games",
+      "category": "battlefield",
+      "id": "32e2"
+    },
+    {
+      "pin": "farcry703",
+      "owner": "ubisoft",
+      "category": "farcry",
+      "id": "7d75"
+    },
+    {
+      "pin": "watchdogs315",
+      "owner": "ubisoft",
+      "category": "watch dogs",
+      "id": "ace6"
+    },
+    {
+      "id": "65bd",
+      "pin": "hs797",
+      "owner": "blizzard",
+      "category": "hearthstone"
+    }
+  ]
+}
