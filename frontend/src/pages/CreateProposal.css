@@ -66,3 +66,16 @@
 .createBtn:hover{
     background-color: #333;
 }
+.adminbtn{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+.adminbtn:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+.adminbtn:active{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}

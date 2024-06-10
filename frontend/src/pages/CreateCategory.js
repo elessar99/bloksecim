@@ -9,6 +9,7 @@ import "./CreateProposal.css"
 import { Result } from "ethers";
 import Results from "./Results";
 import ResultCard from "../cards/ResultCard";
+import { NavLink } from "react-router-dom";
 
 
 const CreateCategory = () => {
@@ -45,8 +46,11 @@ const CreateCategory = () => {
         <>
         <section>
         <div className="createPage container">
+            <div>
+                <NavLink className="adminbtn" to="/admin/create">Önerge oluştur</NavLink>
+            </div>
            <div className="optionInfo">
-            <h1>Categori Oluştur</h1>
+            <h1>Kategori Oluştur</h1>
            </div>
            <div>
            <div className="proposalInput">
