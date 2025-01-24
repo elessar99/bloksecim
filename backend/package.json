@@ -17,7 +17,7 @@
         "bcrypt": "^5.1.1",
         "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
-        "dotenv": "^16.4.5",
+        "dotenv": "^16.4.7",
         "express": "^4.19.2",
         "express-custom-error": "^1.8.4",
         "has-keys": "^0.1.0",
@@ -37,5 +37,8 @@
         "@models": "src/models",
         "@util": "src/util",
         "@routes": "src/routes"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
     }
 }
