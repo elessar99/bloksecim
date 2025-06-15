@@ -40,7 +40,7 @@ MongoDB veritabanında kullanıcı koleksiyonu aşağıdaki alanları içerir:
 - npm install
 - npm start
 
-### Frontend içindeki sjon server
+### Frontend içindeki json server
 
 - cd /frontend/api
 - json-server --db.json
