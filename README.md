@@ -36,17 +36,17 @@ MongoDB veritabanında kullanıcı koleksiyonu aşağıdaki alanları içerir:
 
 ### Backend
 
-cd /backend
-npm install
-npm start
+- cd /backend
+- npm install
+- npm start
 
 ### Frontend içindeki sjon server
 
-cd /frontend/api
-json-server --db.json
+- cd /frontend/api
+- json-server --db.json
 
 ### Frontend
 
-cd /frontend
-npm install
-npm start
+- cd /frontend
+- npm install
+- npm start
