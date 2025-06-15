@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 
 /* Static variables for configurations. */
+
 const PORT = process.env.PORT || 5500;
 const DATABASE_URL = process.env.DATABASE_URL;
 

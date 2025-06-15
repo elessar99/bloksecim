@@ -20,6 +20,7 @@ root.render(
         </PersistGate>
     </Provider>
 );
+
 // ReactDOM.render(
 //     <Provider store={store}>
 //         <PersistGate persistor={persistor} loading={<div>...</div>}>

@@ -139,8 +139,4 @@ contract BlokSecimDAO {
     }
 
 
-
-
-
-
 }
